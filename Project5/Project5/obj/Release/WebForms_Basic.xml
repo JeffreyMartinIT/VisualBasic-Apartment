@@ -1,0 +1,578 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Project5
+</name>
+</assembly>
+<members>
+<member name="T:Project5.My.MyWebExtension">
+ <summary>
+ Module used to define the properties that are available in the My Namespace for Web projects.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:Project5.My.MyWebExtension.Computer">
+ <summary>
+ Returns information about the host computer.
+ </summary>
+</member>
+<member name="P:Project5.My.MyWebExtension.User">
+ <summary>
+ Returns information for the current Web user.
+ </summary>
+</member>
+<member name="P:Project5.My.MyWebExtension.Request">
+ <summary>
+ Returns Request object.
+ </summary>
+</member>
+<member name="P:Project5.My.MyWebExtension.Response">
+ <summary>
+ Returns Response object.
+ </summary>
+</member>
+<member name="P:Project5.My.MyWebExtension.Log">
+ <summary>
+ Returns the Asp log object.
+ </summary>
+</member>
+<member name="F:Project5.AddResidents._SelectApartmentNumberPanel">
+<summary>
+SelectApartmentNumberPanel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.AddResidents._ResidentsApartmentNumberLabel">
+<summary>
+ResidentsApartmentNumberLabel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.AddResidents._ResidentAppartmentNumberListBox">
+<summary>
+ResidentAppartmentNumberListBox control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.AddResidents._ResidentsApartmentNumberLabelMessage">
+<summary>
+ResidentsApartmentNumberLabelMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.AddResidents._AddResidentForApartmentChosenButton">
+<summary>
+AddResidentForApartmentChosenButton control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.AddResidents._AddResidentsPanel">
+<summary>
+AddResidentsPanel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.AddResidents._PrimaryLeaserLabel">
+<summary>
+PrimaryLeaserLabel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.AddResidents._ResidentCalendarErrofLabel">
+<summary>
+ResidentCalendarErrofLabel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.AddResidents._DateResidentAddedCalendar">
+<summary>
+DateResidentAddedCalendar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.AddResidents._ResidentLastNameLabel">
+<summary>
+ResidentLastNameLabel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.AddResidents._ResidentLastNameTextBox">
+<summary>
+ResidentLastNameTextBox control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.AddResidents._ResidentLastNameErrorLabel">
+<summary>
+ResidentLastNameErrorLabel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.AddResidents._ResidentFirstNameLabel">
+<summary>
+ResidentFirstNameLabel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.AddResidents._ResidentFirstNameTextBox">
+<summary>
+ResidentFirstNameTextBox control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.AddResidents._ResidentFirstNameErrorLable">
+<summary>
+ResidentFirstNameErrorLable control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.AddResidents._SignedLeaseDropDownList">
+<summary>
+SignedLeaseDropDownList control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.AddResidents._SignedLeaseDropDownListErrorLabel">
+<summary>
+SignedLeaseDropDownListErrorLabel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.AddResidents._AddResidentButton">
+<summary>
+AddResidentButton control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:Project5.DataFetcher">
+ <summary>
+ Class that is used to interact with the database
+ </summary>
+</member>
+<member name="M:Project5.DataFetcher.#ctor">
+ <summary>
+ Default constructor that creates the connection string when class is istanciated.
+ </summary>
+</member>
+<member name="M:Project5.DataFetcher.AddNewLease(System.Int32,System.Decimal,System.String,System.String)">
+ <summary>
+ Add a new lease in the Leases Table.  This is sql injection protected so can use data from a user.
+ </summary>
+ <param name="apartmentNumber">Integer</param>
+ <param name="currentRate">Decimal</param>
+ <param name="dateSelected">String</param>
+ <param name="leaseNumber">String</param>
+ <returns>Boolean</returns>
+</member>
+<member name="M:Project5.DataFetcher.AddNewResident(System.String,System.String,System.String,System.String,System.String,System.String)">
+ <summary>
+ Create a new resident in the Resident table.This is sql injection protected so can use data from a user.
+ </summary>
+ <param name="lastName"></param>
+ <param name="firstName"></param>
+ <param name="dateSelected"></param>
+ <param name="leaseNumber"></param>
+ <param name="personID"></param>
+ <param name="signed"></param>
+ <returns></returns>
+</member>
+<member name="M:Project5.DataFetcher.ObjectFoundOleDbCommand(System.String)">
+ <summary>
+ Search a database and return if found. The queryString sent in needs to be one that will return
+ a boolean. This is not sql injection protected so should only be used internally.
+ </summary>
+ <param name="queryString">String</param>
+ <returns>Boolean</returns>
+</member>
+<member name="M:Project5.DataFetcher.GetLeaseNumnber(System.String)">
+ <summary>
+ Get the lease number from the Leases table base upon the apartment number.
+ This is sql injection protected so can use data from a user.
+ </summary>
+ <param name="apartmentNumber">String</param>
+ <returns>String</returns>
+</member>
+<member name="M:Project5.DataFetcher.DeactivateResidentsForALease(System.String)">
+ <summary>
+ Updates the Active field to false for all residents who have the passed in lease number.
+ This is sql injection protected so can use data from a user.
+ </summary>
+ <param name="leaseNumber">String</param>
+</member>
+<member name="M:Project5.DataFetcher.DeactivateLease(System.String)">
+ <summary>
+ Updates the Active field to false for the lease based upon the lease number.
+ This is sql injection protected so can use data from a user.
+ </summary>
+ <param name="leaseNumber">String</param>
+</member>
+<member name="T:Project5.FactoryLeases">
+ <summary>
+ Class used when interacting only with the Leases Table. 
+ </summary>
+</member>
+<member name="M:Project5.FactoryLeases.ApartmentNumberLeased(System.Int16)">
+ <summary>
+ Take in a apartmentNumber and check if there is a valid lease for it.
+ This is only used internally as sql injection is not accounted for.
+ </summary>
+ <param name="apartmentNumber">Int16</param>
+ <returns>Boolean</returns>
+</member>
+<member name="T:Project5.FactoryLeasesResidents">
+ <summary>
+ Class uses to create data needed for interaction with Leases and Residents tables.
+ </summary>
+</member>
+<member name="M:Project5.FactoryLeasesResidents.AddNewLease(System.Int32,System.Decimal,System.String,System.String,System.String)">
+ <summary>
+ Create the data needed for adding a new lease and resident.
+ </summary>
+ <param name="apartmentNumber">Integer</param>
+ <param name="currentRate">Decimal</param>
+ <param name="lastName">String</param>
+ <param name="firstName">String</param>
+ <param name="dateSelected">String</param>
+</member>
+<member name="M:Project5.FactoryLeasesResidents.DeactivateLease(System.Int32)">
+ <summary>
+ Takes in the apartment number and finds the leases number passes it through to the DataFetcher class to deactive
+ all the residents and the lease.
+ </summary>
+ <param name="apartmentNumber">Integer</param>
+</member>
+<member name="T:Project5.About">
+ <summary>
+ New Contract page.  Here the user can create a new contract.
+ </summary>
+</member>
+<member name="F:Project5.About._CalendarErrorLabel">
+<summary>
+CalendarErrorLabel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.About._DateSignedCalendar">
+<summary>
+DateSignedCalendar control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.About._ApartmentNumberLabel">
+<summary>
+ApartmentNumberLabel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.About._AppartmentNumberListBox">
+<summary>
+AppartmentNumberListBox control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.About._ApartmnetFullLabel">
+<summary>
+ApartmnetFullLabel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.About._CurrentRateLabel">
+<summary>
+CurrentRateLabel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.About._CurrentRateTextBox">
+<summary>
+CurrentRateTextBox control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.About._RateErrorLabel">
+<summary>
+RateErrorLabel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.About._LastNameTextBox">
+<summary>
+LastNameTextBox control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.About._LastNameErrorLabel">
+<summary>
+LastNameErrorLabel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.About._FirstNameTextBox">
+<summary>
+FirstNameTextBox control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.About._FirstNameErrorLabel">
+<summary>
+FirstNameErrorLabel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.About._CreateContractButton">
+<summary>
+CreateContractButton control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="M:Project5.About.Page_Load(System.Object,System.EventArgs)">
+ <summary>
+ Fill the list box with apartments numbers that do not have an active lease upon loading of the page.
+ </summary>
+ <param name="sender">Object</param>
+ <param name="e">EventArgs</param>
+</member>
+<member name="M:Project5.About.CreateContractButton_Click(System.Object,System.EventArgs)">
+ <summary>
+ When button is pressed, validate data needed to create a new lease and then create it.
+ </summary>
+ <param name="sender">Object</param>
+ <param name="e">EventArgs</param>
+</member>
+<member name="M:Project5.About.ResetErrorLabels">
+ <summary>
+ Reset all the error labels
+ </summary>
+</member>
+<member name="T:Project5._Default">
+ <summary>
+ Home page. Shows the current active contracts and allows ending them.
+ </summary>
+</member>
+<member name="M:Project5._Default.Page_Load(System.Object,System.EventArgs)">
+ <summary>
+ Load the drop down list upon starting the page.
+ </summary>
+ <param name="sender">Object</param>
+ <param name="e">EventArgs</param>
+</member>
+<member name="M:Project5._Default.MoveOutDropDownList_SelectedIndexChanged(System.Object,System.EventArgs)">
+ <summary>
+ Upon choosing an apartment number from the drop down list confirm deactivation and call the method
+ that will interact with the database to deactivate the resident and lease for the apartment selected.
+ </summary>
+ <param name="sender">Object</param>
+ <param name="e">EventArgs</param>
+</member>
+<member name="F:Project5._Default._GridView2">
+<summary>
+GridView2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5._Default._SqlDataSource2">
+<summary>
+SqlDataSource2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5._Default._MoveOutDropDownList">
+<summary>
+MoveOutDropDownList control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5._Default._MovedOutLabel">
+<summary>
+MovedOutLabel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5._Default._DeleteButton">
+<summary>
+DeleteButton control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5._Default._CancelButton">
+<summary>
+CancelButton control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.SiteMaster._MainContent">
+<summary>
+MainContent control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.Site_Mobile._Head1">
+<summary>
+Head1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.Site_Mobile._HeadContent">
+<summary>
+HeadContent control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.Site_Mobile._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.Site_Mobile._FeaturedContent">
+<summary>
+FeaturedContent control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.Site_Mobile._MainContent">
+<summary>
+MainContent control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:Project5.Site_Mobile._ViewSwitcher1">
+<summary>
+ViewSwitcher1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+</members>
+</doc>

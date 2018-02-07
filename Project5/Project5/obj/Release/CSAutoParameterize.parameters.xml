@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="apartmentConnectionString-Web.config Connection String" description="apartmentConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=leaffrey.database.windows.net;Initial Catalog=apartment;User ID=animeman1999;Password=gosharks#1l" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\leaffreyapartments\\Project5\\Project5\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='apartmentConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

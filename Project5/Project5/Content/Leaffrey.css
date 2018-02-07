@@ -1,0 +1,19 @@
+﻿/* Mains site settings*/
+
+body {
+    background-color: #EFF5FB;
+}
+.table td,
+.table th {
+    background-color: #428bca !important;
+}
+.navbar-default {
+    background-color: #A02CD5;
+}
+.navbar-inverse {
+    background-color: #0B0B61;
+    border-color: #080808;
+}
+.jumbotron {
+    background-color: #CECEF6;
+}
