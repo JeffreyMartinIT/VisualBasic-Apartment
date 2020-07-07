@@ -37,6 +37,11 @@ Project5
  Returns the Asp log object.
  </summary>
 </member>
+<member name="T:Project5.AddResidents">
+ <summary>
+ Code for page to add residents.
+ </summary>
+</member>
 <member name="F:Project5.AddResidents._SelectApartmentNumberPanel">
 <summary>
 SelectApartmentNumberPanel control.
@@ -199,6 +204,13 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="M:Project5.AddResidents.Page_Load(System.Object,System.EventArgs)">
+ <summary>
+ Items done upon loading of the page.
+ </summary>
+ <param name="sender">Object</param>
+ <param name="e">System.EventArgs</param>
+</member>
 <member name="M:Project5.AddResidents.AddResidentButton_Click(System.Object,System.EventArgs)">
  <summary>
  Validates data has been entered in each category and if valid adds the new resident to the database and
@@ -212,19 +224,6 @@ To modify move field declaration from designer file to code-behind file.
  Makes all error messages invisable.
  </summary>
 </member>
-<member name="M:Project5.AddResidents.FetchLeaseNumberForApartment">
- <summary>
- Use the FactoryLeases that hooks up with the data fetcher to get the Lease Number of the apartment chosen.
- </summary>
- <returns>String</returns>
-</member>
-<member name="M:Project5.AddResidents.FetchNameOfResidentsForApartment(System.String)">
- <summary>
- Use the FactoryLeaseResident that hooks up with the data fetcher to get the names of the residents of the apartment.
- </summary>
- <param name="leaseNumber">String</param>
- <returns>String</returns>
-</member>
 <member name="M:Project5.AddResidents.CreateResidentsInApartmentHeader">
  <summary>
  Creates the header needed for the list of residents in an apartment.
@@ -237,6 +236,19 @@ To modify move field declaration from designer file to code-behind file.
  </summary>
  <param name="sender"></param>
  <param name="e"></param>
+</member>
+<member name="M:Project5.AddResidents.FetchLeaseNumberForApartment">
+ <summary>
+ Use the FactoryLeases that hooks up with the data fetcher to get the Lease Number of the apartment chosen.
+ </summary>
+ <returns>String</returns>
+</member>
+<member name="M:Project5.AddResidents.FetchNameOfResidentsForApartment(System.String)">
+ <summary>
+ Use the FactoryLeaseResident that hooks up with the data fetcher to get the names of the residents of the apartment.
+ </summary>
+ <param name="leaseNumber">String</param>
+ <returns>String</returns>
 </member>
 <member name="T:Project5.DataFetcher">
  <summary>
@@ -313,6 +325,27 @@ To modify move field declaration from designer file to code-behind file.
  <param name="apartmentNumber">Int16</param>
  <returns>Boolean</returns>
 </member>
+<member name="M:Project5.FactoryLeases.LeaseNumberForApartment(System.String)">
+ <summary>
+ Return the lease number for active apartmentNumber
+ </summary>
+ <param name="apartmentNumber">String</param>
+ <returns>String</returns>
+</member>
+<member name="M:Project5.FactoryLeases.ListOfTransactionForLease(System.String)">
+ <summary>
+ Return the list of transaction for the lease number supplied.
+ </summary>
+ <param name="leaseNumber">String</param>
+ <returns>String</returns>
+</member>
+<member name="M:Project5.FactoryLeases.GetRentAmountForLease(System.String)">
+ <summary>
+ Retrun the current rent amount based upon the lease number supplied.
+ </summary>
+ <param name="leaseNumber">String</param>
+ <returns>String</returns>
+</member>
 <member name="T:Project5.FactoryLeasesResidents">
  <summary>
  Class uses to create data needed for interaction with Leases and Residents tables.
@@ -328,12 +361,37 @@ To modify move field declaration from designer file to code-behind file.
  <param name="firstName">String</param>
  <param name="dateSelected">String</param>
 </member>
+<member name="M:Project5.FactoryLeasesResidents.AddNewResident(System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+ <summary>
+ Add a new resident using todays date.
+ </summary>
+ <param name="lastName">String</param>
+ <param name="firstName">String</param>
+ <param name="dateSelected">String</param>
+ <param name="leaseNumber">String</param>
+ <param name="personID">String</param>
+ <param name="signedBool">Boolean</param>
+</member>
 <member name="M:Project5.FactoryLeasesResidents.DeactivateLease(System.Int32)">
  <summary>
  Takes in the apartment number and finds the leases number passes it through to the DataFetcher class to deactive
  all the residents and the lease.
  </summary>
  <param name="apartmentNumber">Integer</param>
+</member>
+<member name="M:Project5.FactoryLeasesResidents.GetNumberOfResidentsWithSameLeaseNumber(System.String)">
+ <summary>
+ Returns the number of active residents associated with a lease number
+ </summary>
+ <param name="leaseNumber">String</param>
+ <returns>Int16</returns>
+</member>
+<member name="M:Project5.FactoryLeasesResidents.GetResidentsInAnApartment(System.String)">
+ <summary>
+ Retruns a list of residents for a supplied lease number.
+ </summary>
+ <param name="leaseNumber">String</param>
+ <returns>String</returns>
 </member>
 <member name="F:Project5.CurrentContracts._GridView2">
 <summary>
@@ -389,6 +447,13 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="M:Project5.CurrentContracts.Page_Load(System.Object,System.EventArgs)">
+ <summary>
+ Items done when page is loaded
+ </summary>
+ <param name="sender">Object</param>
+ <param name="e">System.EventArgs</param>
+</member>
 <member name="M:Project5.CurrentContracts.MoveOutDropDownList_SelectedIndexChanged(System.Object,System.EventArgs)">
  <summary>
  Upon choosing an apartment number from the drop down list confirm deactivation and call the method
@@ -396,6 +461,20 @@ To modify move field declaration from designer file to code-behind file.
  </summary>
  <param name="sender">Object</param>
  <param name="e">EventArgs</param>
+</member>
+<member name="M:Project5.CurrentContracts.DeleteButton_Click(System.Object,System.EventArgs)">
+ <summary>
+ When delete button is clicked deactivate the lease number and associated residents.
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Project5.CurrentContracts.CancelButton_Click(System.Object,System.EventArgs)">
+ <summary>
+ Event handler to refresh the current contracts page.
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
 </member>
 <member name="T:Project5.About">
  <summary>
@@ -540,15 +619,20 @@ To modify move field declaration from designer file to code-behind file.
 </member>
 <member name="T:Project5._Default">
  <summary>
- Home page. Shows the current active contracts and allows ending them.
+ Landing page.
  </summary>
 </member>
 <member name="M:Project5._Default.Page_Load(System.Object,System.EventArgs)">
  <summary>
- Load the drop down list upon starting the page.
+ Nothing being loaded at this time as the page is static.
  </summary>
  <param name="sender">Object</param>
  <param name="e">EventArgs</param>
+</member>
+<member name="T:Project5.Rents">
+ <summary>
+ Code to keep track of charges to residents and payments.
+ </summary>
 </member>
 <member name="F:Project5.Rents._ChooseApartmentNumber">
 <summary>
@@ -765,6 +849,57 @@ SaveTransactionButton control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member>
+<member name="M:Project5.Rents.Page_Load(System.Object,System.EventArgs)">
+ <summary>
+ Items done upon loading of page
+ </summary>
+ <param name="sender">Object</param>
+ <param name="e">System.EventArgs</param>
+</member>
+<member name="M:Project5.Rents.ResetErrorLabels">
+ <summary>
+ Gets rid of any error messages on the page.
+ </summary>
+</member>
+<member name="M:Project5.Rents.ChangeApartmentNumberButton_Click(System.Object,System.EventArgs)">
+ <summary>
+ Refreshes the page so the user can change apartment numbers.
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Project5.Rents.SaveTransactionButton_Click(System.Object,System.EventArgs)">
+ <summary>
+ Event handler to save the transaction.
+ </summary>
+ <param name="sender">Object</param>
+ <param name="e">EventArgs</param>
+</member>
+<member name="M:Project5.Rents.AddTransaction">
+ <summary>
+ Adds the transaction to the database.
+ </summary>
+</member>
+<member name="M:Project5.Rents.OutputTransactions(System.String)">
+ <summary>
+ Gets all the transactions for an apartment number and displays them on the rents page.
+ </summary>
+ <param name="leaseNumber">String</param>
+</member>
+<member name="M:Project5.Rents.TransactionChoiceDropDownList_SelectedIndexChanged(System.Object,System.EventArgs)">
+ <summary>
+ Event handler to select what type of transaction is being done.
+ </summary>
+ <param name="sender">Object</param>
+ <param name="e">EventArgs</param>
+</member>
+<member name="M:Project5.Rents.ResidentAppartmentNumberListBox_SelectedIndexChanged(System.Object,System.EventArgs)">
+ <summary>
+ Event handler for when the user chooses the apartment number.
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
 </member>
 <member name="F:Project5.SiteMaster._MainContent">
 <summary>
